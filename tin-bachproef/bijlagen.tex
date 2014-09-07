@@ -1,0 +1,197 @@
+%%========================================================================
+%% LaTeX sjabloon voor bachelorproef toegepaste informatica
+%%  HoGent Bedrijf en Organisatie - Bijlagenbundel
+%%========================================================================
+
+%%========================================================================
+%% Preamble
+%%========================================================================
+
+\documentclass[pdftex,a4paper,12pt,twoside]{report}
+
+% XXX: Let op: dit sjabloon is gemaakt om dubbelzijdig af te drukken
+% Voor enkelzijdig, verwijder ``twoside'' hierboven.
+
+%%---------- Extra functionaliteit ---------------------------------------
+
+\usepackage[utf8]{inputenc}  % Accenten gebruiken in tekst (vb. é ipv \'e)
+\usepackage{amsfonts}        % AMS math packages: extra wiskundige
+\usepackage{amsmath}         %   symbolen (o.a. getallen-
+\usepackage{amssymb}         %   verzamelingen N, R, Z, Q, etc.)
+\usepackage[dutch]{babel}    % Taalinstellingen: woordsplitsingen,
+                             %  commando's voor speciale karakters
+                             %  ("dutch" voor NL)
+\usepackage{eurosym}         % Euro-symbool €
+\usepackage{geometry}
+\usepackage{graphicx}        % Invoegen van tekeningen
+\usepackage[pdftex,bookmarks=true]{hyperref}
+                             % PDF krijgt klikbare links & verwijzingen,
+                             %  inhoudstafel
+\usepackage{listings}        % Broncode mooi opmaken
+\usepackage{multirow}        % Tekst over verschillende cellen in tabellen
+\usepackage{rotating}        % Tabellen en figuren roteren
+\usepackage{natbib}          % Betere bibliografiestijlen
+\usepackage{fancyhdr}        % Pagina-opmaak met hoofd- en voettekst
+
+\usepackage[T1]{fontenc}     % Ivm lettertypes
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+\usepackage{lipsum}          % Voor vultekst (lorem ipsum)
+
+%%---------- Layout ------------------------------------------------------
+
+% hoofdingen, enz.
+\pagestyle{fancy}
+% enkel hoofdstuktitel in hoofding, geen sectietitel (vermijd overlap)
+\renewcommand{\sectionmark}[1]{}
+
+% lijn, wordt gebruikt in titelpagina
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% Leeg blad
+\newcommand{\emptypage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
+
+% Gebruik een schreefloos lettertype ipv het "oubollig" uitziende
+% Computer Modern
+\renewcommand{\familydefault}{\sfdefault}
+
+% Commando voor invoegen Java-broncodebestanden (dank aan Niels Corneille)
+% Gebruik: \javacode{source/MijnKlasse.java}{Uitleg bij de code}
+\newcommand{\javacode}[2]{ \lstset{%
+  language=java,
+  breaklines=true,
+  float=th,
+  caption={#2},
+  basicstyle=\scriptsize,
+  frame=single,
+  extendedchars=\true
+}
+\lstinputlisting{#1}}
+
+%%---------- Documenteigenschappen ---------------------------------------
+%% Vul dit aan met je eigen info:
+
+% Je eigen naam
+\newcommand{\student}{Piet Pieters}
+
+% De naam van je lector, begeleider, promotor
+\newcommand{\promotor}{Bert Van Vreckem}
+
+% De naam van je co-promotor
+\newcommand{\copromotor}{Jan Janssen}
+
+% Indien je bachelorproef in opdracht van een bedrijf of organisatie
+% geschreven is, geef je hier de naam.
+\newcommand{\instelling}{---}
+
+% De titel van het rapport/bachelorproef
+\newcommand{\titel}{Titel}
+
+% Datum van indienen
+\newcommand{\datum}{29 mei 2015}
+
+% Faculteit
+\newcommand{\faculteit}{Faculteit Bedrijf en Organisatie}
+
+% Soort rapport
+\newcommand{\rapporttype}{Scriptie voorgedragen tot het bekomen van de graad van\\Bachelor in de toegepaste informatica}
+
+% Academiejaar
+\newcommand{\academiejaar}{2014-2015}
+
+% Examenperiode
+%  - 1e semester = 1e examenperiode
+%  - 2e semester = 2e examenperiode
+%  - tweede zit = 3e examenperiode
+\newcommand{\examenperiode}{Tweede examenperiode}
+
+%%========================================================================
+%% Inhoud document
+%%========================================================================
+
+\begin{document}
+
+%%---------- Front matter ------------------------------------------------
+%% Het voorblad - Hier moet je in principe niets wijzigen.
+
+\begin{titlepage}
+  \newgeometry{top=2cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
+  \begin{center}
+
+    \begingroup
+    \rmfamily
+    \includegraphics[width=2.5cm]{img/HG-beeldmerk-woordmerk}\\[.5cm]
+    \faculteit\\[3cm]
+    \titel\\[1cm]
+    Bijlagen
+    \vfill
+    \student\\[3.5cm]
+    \rapporttype\\[2cm]
+    Promotor:\\
+    \promotor\\
+    Co-promotor:\\
+    \copromotor\\[2.5cm]
+    Instelling: \instelling\\[.5cm]
+    Academiejaar: \academiejaar\\[.5cm]
+    \examenperiode
+    \endgroup
+
+  \end{center}
+  \restoregeometry
+\end{titlepage}
+
+% Schutblad
+
+\emptypage
+
+
+\begin{titlepage}
+  \newgeometry{top=5.35cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
+  \begin{center}
+
+    \begingroup
+    \rmfamily
+    \faculteit\\[3cm]
+    \titel\\[1cm]
+    Bijlagen
+    \vfill
+    \student\\[3.5cm]
+    \rapporttype\\[2cm]
+    Promotor:\\
+    \promotor\\
+    Co-promotor:\\
+    \copromotor\\[2.5cm]
+    Instelling: \instelling\\[.5cm]
+    Academiejaar: \academiejaar\\[.5cm]
+    \examenperiode
+    \endgroup
+
+  \end{center}
+  \restoregeometry
+\end{titlepage}
+
+
+\tableofcontents
+
+\appendix
+
+\chapter{Broncode}
+\label{ch:broncode}
+
+% Automatisch invoegen van al je Java broncode:
+% % 1/ maak een link naar je broncodedirectory naar subdirectory source
+% %      ln -s /path/to/java/src/ ./source
+% %    Of kopieer desnoods al je broncodebestanden. Zorg dat je
+% %    versiebeheersysteem deze directory negeert!
+% % 2/ Genereer source.tex met het script source.sh
+% %      ./source.sh
+% % 3/ Haal volgende regel uit commentaar
+% %\input{source.tex}
+
+\end{document}
