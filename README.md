@@ -5,7 +5,7 @@ In deze repository vind je enkele sjablonen voor LaTeX documenten die de HoGent 
 Momenteel zijn er drie beschikbaar:
 
 * Een presentatie gebaseerd op de `beamer`-klasse
-* Een basisdocument voor scriptie of stageverslag
+* Een sjabloon voor de bachelorproef toegepaste informatica (aanpasbaar voor andere bachelorproeven of scripties)
 * Een examenopgave (wellicht enkel nuttig voor lectoren...)
 
 ## Aan de slag
@@ -18,7 +18,7 @@ hetzij door alles in een zip-bestand te downloaden via de link in het infovak re
 
 Ik raad je ten zeerste aan om je LaTeX-documenten in een versiebeheersysteem te steken (bv. Git, Mercurial, Subversion, enz.).
 
-LaTeX genereert een hele hoop hulpbestanden die eigenlijk niet in versiebeheer thuishoren. Je kan je versiebeheersysteem vragen bepaalde files te negeren, a.h.v. patronen. Bij Git, bijvoorbeeld, steek je die in een bestand `.gitignore` in de root van je project. Je kan een voorbeeld vinden in de source, op https://gist.github.com/bertvv/4460239 of https://github.com/github/gitignore
+LaTeX genereert een hele hoop hulpbestanden die eigenlijk niet in versiebeheer thuishoren. Je kan je versiebeheersysteem vragen bepaalde files te negeren, a.h.v. patronen. Bij Git, bijvoorbeeld, steek je die in een bestand `.gitignore` in de root van je project. Je kan een voorbeeld vinden in de source, op https://gist.github.com/bertvv/4460239 of https://github.com/github/gitignore. I het huidige project zit er al een `.gitignore`.
 
 ## Vragen, bugs, verbeteringen
 
