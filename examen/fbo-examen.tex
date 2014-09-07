@@ -1,0 +1,121 @@
+%%----------------------------------------------------------------------------
+%% Examenopgave HoGent Bedrijf en Organisatie
+%%----------------------------------------------------------------------------
+%% Auteur: Bert Van Vreckem [bert.vanvreckem@hogent.be]
+%% 2012-12-17 
+
+\documentclass{exam}
+
+\usepackage{graphicx}
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{wasysym}
+
+\newif\ifsolution % Vlag die aanduidt of de oplossing afgedrukt moet worden
+
+%%----------------------------------------------------------------------------
+%% Info over het examen
+%%----------------------------------------------------------------------------
+
+\newcommand{\academiejaar}{2012-2013}   % vb. 2012-2013
+\newcommand{\examenperiode}{1e}         % vb. 1e, 2e
+\newcommand{\examenmaand}{januari 2013} % vb. januari 2013
+\newcommand{\reeks}{Reeks 1}            % vb. Reeks 1, Reeks 2, Inhaalexamen
+\newcommand{\olod}{Systeembeheer--Linux} % vb. Algoritmen
+\newcommand{\examendatum}{8 jan 2013}
+\newcommand{\campus}{Schoonmeersen}      % vb. Schoonmeerssen, Aalst
+\newcommand{\klassen}{3TI}               % vb. 3TI, ITM, ...
+\newcommand{\lectoren}{Bert Van Vreckem}
+
+%% Voorbeeldoplossing? (ja -> \solutiontrue; nee -> \solutionfalse)
+\solutionfalse
+
+%%----------------------------------------------------------------------------
+%% Lay-out, hoofding
+%%----------------------------------------------------------------------------
+
+%% In principe zijn hier geen wijzigingen nodig!
+
+\renewcommand{\familydefault}{\sfdefault} % Schreefloos lettertype
+
+\pointsinmargin
+\marginpointname{pt}
+\addpoints
+
+\pagestyle{head}
+\runningheadrule
+\extraheadheight{1cm}
+\firstpageheader{\includegraphics[height=2cm]{/home/bert/Documents/hogent/algemeen/huisstijl/logo/FBO-NL}}%
+{}%
+{\small{Valentin Vaerwyckweg 1\\9000 Gent\\T +32 9 243 22 00\\fbo@hogent.be\\www.hogent.be/fbo}}
+\runningheader{\olod, \reeks \ifsolution : Voorbeeldoplossing\fi}%
+{}%
+{p. \thepage/\numpages}
+
+\begin{document}
+
+\ifsolution
+\begin{center}
+\LARGE{\textbf{VOORBEELDOPLOSSING}}
+\end{center}
+\fi
+
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|p{.95\textwidth}|}{\textbf{Academiejaar \academiejaar{} -- \examenperiode{} examenperiode (\examenmaand) \hfill \reeks}}\tabularnewline
+\hline
+\multicolumn{2}{|p{.65\textwidth}|}{Opleidingsonderdeel: \olod} & Examendatum: \examendatum \tabularnewline
+\multicolumn{2}{|p{.65\textwidth}|}{Campus: \campus{}} & Klas(sen): \klassen \tabularnewline
+\multicolumn{2}{|p{.65\textwidth}|}{Lector(en): \lectoren} &  \tabularnewline
+\hline
+Naam student: & \multicolumn{2}{|p{.4\textwidth}|}{Klas student: }\tabularnewline
+ & \multicolumn{2}{|p{.4\textwidth}|}{}\tabularnewline
+\hline
+Geboortedatum student: & \multicolumn{2}{|p{.4\textwidth}|}{Stamnummer: }\tabularnewline
+ & \multicolumn{2}{|p{.4\textwidth}|}{}\tabularnewline
+\hline
+Lector bij wie de student de onderwijsactiviteit volgde: \enspace \hrulefill & \multicolumn{2}{|p{.4\textwidth}|}{Lesgroep: }\tabularnewline
+ & \multicolumn{2}{|p{.4\textwidth}|}{}\tabularnewline
+\hline
+\multicolumn{3}{|l|}{Behaald resultaat: \_\_\_\_\_ op \numpoints{}}\tabularnewline
+\hline
+\end{tabular}
+
+\vspace{.3cm}
+
+\XBox Tijdens het examen mogen GEEN hulpmiddelen gebruikt worden
+
+\Square Tijdens het examen mogen volgende hulpmiddelen gebruikt worden:
+\begin{itemize}
+\item
+\end{itemize}
+
+\hrulefill
+
+\begin{questions}
+
+\framedsolutions
+\ifsolution
+  \printanswers
+\else
+  \noprintanswers
+\fi
+
+%%----------------------------------------------------------------------------
+%% Examenvragen
+%%----------------------------------------------------------------------------
+  
+\question[1] Volledig en correct invullen hoofding
+
+\question[9] Waarom zijn de bananen krom?
+  
+\begin{solutionordottedlines}[3cm]
+Daarom.
+\end{solutionordottedlines}
+
+\end{questions}
+
+\end{document}
