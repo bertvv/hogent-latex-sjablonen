@@ -1,0 +1,134 @@
+%%----------------------------------------------------------------------------
+%% Presentatie HoGent Bedrijf en Organisatie
+%%----------------------------------------------------------------------------
+%% Auteur: Bert Van Vreckem [bert.vanvreckem@hogent.be]
+
+\documentclass{beamer}
+
+%==============================================================================
+% Aanloop
+%==============================================================================
+
+%---------- Packages ----------------------------------------------------------
+
+\usepackage{graphicx,multicol}
+\usepackage{comment,enumerate,hyperref}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tikz}
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{listings}
+
+%---------- Configuratie ------------------------------------------------------
+
+\usetikzlibrary{arrows,shapes,backgrounds,positioning,shadows}
+
+\usetheme{hogent}
+
+%---------- Commando-definities -----------------------------------------------
+
+
+
+%---------- Info over de presentatie ------------------------------------------
+
+\title[Korte titel]{Een lange presentatietitel over meerdere lijnen}
+\author{Bert {Van Vreckem} \small(\href{mailto:bert.vanvreckem@hogent.be}{bert.vanvreckem@hogent.be})}
+\date{\today}
+
+%==============================================================================
+% Inhoud presentatie
+%==============================================================================
+
+\begin{document}
+
+%---------- Front matter ------------------------------------------------------
+
+% Dia met het HoGent logo
+\HoGentLogo
+
+% Titeldia met faculteitslogo
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%---------- Inhoud ------------------------------------------------------------
+
+% Dia voor sectiekop, voorbeeld met een afbeelding onderaan de pagina
+\part{Deel 1}
+\partframe{%
+  Het eerste deel
+  \vfill
+  \includegraphics[width=3cm]{logo/HG-woordmerk-inv}
+}
+
+\section{Sectie 1}
+
+\subsection{Subsectie 1.1}
+
+\begin{frame}
+  \frametitle{Titel}
+
+  \begin{itemize}
+  \item Lijn 1
+  \item Lijn 2
+  \item Lijn 3
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Twee kolommen}
+
+  \begin{columns}[c]
+
+  \column{.5\textwidth}
+    \begin{itemize}
+    \item Lijn 1
+    \item Lijn 2
+    \item Lijn 3
+    \end{itemize}
+
+  \column{.5\textwidth}
+    \begin{itemize}
+    \item Lijn 1
+    \item Lijn 2
+    \item Lijn 3
+    \end{itemize}
+
+  \end{columns}
+\end{frame}
+
+\subsection{Subsectie 1.2}
+
+\part{Deel 2}
+\partframe{Het tweede deel}
+
+\section{Sectie 1}
+
+\begin{frame}
+  \frametitle{Tekstblok}
+
+  Voorbeeld van een \alert{blok}
+
+  \begin{block}{Titel}
+    Inhoud van het \alert{blok}
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Tekstblok 2}
+
+  Een blok met nadruk:
+
+  \begin{alertblock}{Titel}
+    Inhoud van het blok
+  \end{alertblock}
+
+\end{frame}
+
+%---------- Back matter -------------------------------------------------------
+
+\end{document}
