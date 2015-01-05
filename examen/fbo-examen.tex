@@ -12,7 +12,14 @@
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{multirow}
-\usepackage{wasysym}
+
+% Lettertype en symbolen
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{wasysym,amssymb,latexsym,amsfonts}
+
+\setlength{\parindent}{0pt}
 
 \newif\ifsolution % Vlag die aanduidt of de oplossing afgedrukt moet worden
 
@@ -48,7 +55,7 @@
 \pagestyle{head}
 \runningheadrule
 \extraheadheight{1cm}
-\firstpageheader{\includegraphics[height=2cm]{/home/bert/Documents/hogent/algemeen/huisstijl/logo/FBO-NL}}%
+\firstpageheader{\includegraphics[height=2cm]{FBO-NL}}%
 {}%
 {\small{Valentin Vaerwyckweg 1\\9000 Gent\\T +32 9 243 22 00\\fbo@hogent.be\\www.hogent.be/fbo}}
 \runningheader{\olod, \reeks \ifsolution : Voorbeeldoplossing\fi}%
