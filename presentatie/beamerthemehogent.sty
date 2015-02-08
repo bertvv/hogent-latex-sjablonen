@@ -46,9 +46,10 @@
 
 % Kadertekst
 \setbeamercolor*{block title}{use=structure,bg=HoGentBlue,fg=white}
-\setbeamercolor*{block title alerted}{use=structure,bg=HoGentBlue,fg=HoGentRed}
 \setbeamercolor*{block body}{use=structure,bg=HoGentFBO,fg=white}
-\setbeamercolor*{block body alerted}{use=structure,bg=HoGentFBO,fg=HoGentYellow}
+
+\setbeamercolor*{block title alerted}{use=structure,bg=HoGentBlue,fg=HoGentYellow}
+\setbeamercolor*{block body alerted}{use=structure,bg=HoGentFBO,fg=white}
 
 %%============================================================================
 %% Presentatiestijl: lettertypes
@@ -89,25 +90,25 @@
 %%----------------------------------------------------------------------------
 %% Voetlijn: HoGent woordmerk, korte titel, datum en paginanummer
 \setbeamertemplate{footline}{%
-  	\vskip 2pt \hskip 2pt \includegraphics[width=1.5cm]{logo/HG-woordmerk}\hskip 1em \insertshorttitle % links
+  %\vskip 2pt \hskip 2pt \includegraphics[width=1.5cm]{img/HG-woordmerk}\hskip 1em \insertshorttitle % links
+  %\hfill
+  %\insertdate % midden
   \hfill
-    \insertdate % midden
-  \hfill
-  	\insertframenumber/\inserttotalframenumber \hspace*{2pt}} % rechts
+  \insertframenumber/\inserttotalframenumber \hspace*{2pt}} % rechts
 
 %%----------------------------------------------------------------------------
 %% Dia met HoGent logo
 \newcommand{\HoGentLogo}{%
-{%
-  \setbeamertemplate{background canvas}{%
-            \color{black}\rule{\paperwidth}{\paperheight}%
-        }%
-        \begin{frame}[plain]%
-          \begin{center}%
-          \includegraphics[width=.3\textwidth]{logo/HG-beeldmerk-inv}
-          \end{center}%
-        \end{frame}%
-}
+  {%
+    \setbeamertemplate{background canvas}{%
+      \color{black}\rule{\paperwidth}{\paperheight}%
+    }%
+    \begin{frame}[plain]%
+      \begin{center}%
+        \includegraphics[width=.3\textwidth]{img/HG-beeldmerk-inv}
+      \end{center}%
+    \end{frame}%
+  }
 }
 
 %%----------------------------------------------------------------------------
@@ -115,23 +116,30 @@
 \setbeamertemplate{title page}{%
   \vspace{-25mm}
   \begin{beamercolorbox}[wd=\paperwidth,ht=.8\textheight]{block body}
-  \begin{center}
-    {\includegraphics[width=4.5cm]{logo/FBO-NL-inv}}
-  \end{center}
+    \begin{center}
+      {\includegraphics[width=4.5cm]{img/FBO-NL-inv}}
+    \end{center}
   \end{beamercolorbox}
   \vspace{5mm}
   {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}
-  
+
   \vspace{5mm}
-  
+
   {\usebeamerfont{subtitle}\usebeamercolor[fg]{title}\insertauthor}
 }
 
+\newcommand{\titleframe}{%
+  \begin{frame}[plain]
+    \titlepage
+  \end{frame}
+}
+
+
 %%----------------------------------------------------------------------------
 %% Sectiekop. Gebruik dit als volgt:
-%%   \part{Titel deel}
-%%   \partframe{Ondertitel deel}
-\newcommand{\partframe}[1]{%
+%%   \section{Titel deel}
+%%   \sectionframe{Ondertitel deel}
+\newcommand{\sectionframe}[1]{%
   {
     \setbeamertemplate{background canvas}{%
       \color{HoGentBlue}\rule{\paperwidth}{\paperheight}
@@ -139,16 +147,61 @@
     \begin{frame}[plain]
       \fcolorbox{white}{HoGentBlue}{%
         \begin{minipage}[c][.9\textheight][t]{\textwidth}
-          \usebeamercolor[fg]{part page}\usebeamerfont{title}\insertpart
-          
+          \usebeamercolor[fg]{part page}\usebeamerfont{title}\insertsection
+
           \vspace{5mm}
-          
+
           \usebeamerfont{subtitle}#1
         \end{minipage}
       }
     \end{frame}
   }
 }
+
+\newcommand{\sectionframelogo}[1]{%
+  \sectionframe{%
+    #1
+    \vfill
+    \includegraphics[width=3cm]{img/HG-woordmerk-inv}
+  }
+}
+
+
+%%----------------------------------------------------------------------------
+%% Afbeelding op schaal
+\newcommand{\scaledimg}[1]{%
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#1}
+  \end{center}
+}
+
+\newcommand{\scaledimgvert}[2]{%
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{#1}
+
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{#2}
+
+  \end{center}
+}
+\newcommand{\scaledimghor}[2]{%
+  \begin{center}
+    \includegraphics[width=.4\textwidth,height=0.4\textheight,keepaspectratio]{#1}
+    \includegraphics[width=.4\textwidth,height=0.4\textheight,keepaspectratio]{#2}
+
+  \end{center}
+}
+
+%%----------------------------------------------------------------------------
+%% Bright box
+%% Tekst in een gekleurd kader
+\newcommand{\brightbox}[1]{%
+  \setbeamercolor{alertbox}{bg=HoGentFBO,fg=white}
+  \begin{beamercolorbox}[sep=2pt,center]{alertbox}
+    \textbf{#1}
+  \end{beamercolorbox}
+}
+
+
 
 \mode
 <all>
