@@ -3,8 +3,11 @@
 *.bak
 .*.un~
 
+# Files specific to editors
 # Gedit LaTeX ini file
 .*.ini
+# Vim-Latex
+*latexmain
 
 # LaTeX compilation artifacts
 *.aux
@@ -24,3 +27,4 @@
 *.toc
 *.vrb
 *.fdb_latexmk
+
