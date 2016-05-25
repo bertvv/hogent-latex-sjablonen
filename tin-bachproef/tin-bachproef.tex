@@ -61,60 +61,28 @@
 
 \tableofcontents
 
-% Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
-% hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
+%% Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
+%% hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 
-%%---------- Kern --------------------------------------------------------
+%%---------- Kern -------------------------------------------------------------
 
-\chapter{Inleiding}
-\label{ch:inleiding}
+\input{inleiding}
+\input{methodologie}
 
-De inleiding moet de lezer alle nodige informatie verschaffen om het onderwerp te begrijpen zonder nog externe werken te moeten raadplegen \citep{Pollefliet2011}. Dit is een doorlopende tekst die gebaseerd is op al wat je over het onderwerp gelezen hebt (literatuuronderzoek).
+%% Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
+%% vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
+%% elke fase in je onderzoek in een apart hoofdstuk bespreken.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${cite\{\}}} of \texttt{$\backslash${citep\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\TeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}cite\{\}}.
-Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}citep\{\}}. Hieronder een voorbeeld van elk.
+%\input{}
+%\input{}
+%...
 
-\cite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\citep{Creeger2009}.
+\input{conclusie}
 
-\section{Probleemstelling en Onderzoeksvragen}
-\label{sec:onderzoeksvragen}
-
-% TODO: Wees zo concreet mogelijk bij het formuleren van je
-% onderzoeksvra(a)g(en). Een onderzoeksvraag is trouwens iets waar nog
-% niemand op dit moment een antwoord heeft (voor zover je kan nagaan).
-\lipsum[7-20]
-
-\chapter{Methodologie}
-\label{ch:methodologie}
-
-% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
-% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
-% op deze manier te werk gegaan bent. Je moet kunnen aantonen dat je de best
-% mogelijke manier toegepast hebt om een antwoord te vinden op de
-% onderzoeksvraag.
-\lipsum[21-25]
-
-\chapter{Corpus}
-\label{ch:corpus}
-
-%% TODO: de structuur en titel van deze hoofdstukken hangen af van je
-% eigen onderzoek. Elke fase in je onderzoek kan een eigen hoofdstuk krijgen. Kies telkens een gepaste titel. ``Corpus'' is *GEEN* gepaste titel
-\lipsum[26-75]
-
-\chapter{Conclusie}
-\label{ch:conclusie}
-
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Reflecteer kritisch over het resultaat. Zijn er
-% zaken die nog niet duidelijk zijn? Heeft het ondezoek geleid tot nieuwe
-% vragen die uitnodigen tot verder onderzoek?
-\lipsum[76-80]
-
+%%---------- Back matter ------------------------------------------------------
 
 \bibliographystyle{apa}
 \bibliography{tin-bachproef}
-
-%%---------- Back matter -------------------------------------------------
 
 \listoffigures
 \listoftables
