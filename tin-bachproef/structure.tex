@@ -2,7 +2,7 @@
 %% LaTeX sjabloon voor de bachelorproef, HoGent Bedrijf en Organisatie
 %% Opleiding toegepaste informatica
 %%
-%% Structuur en algemene vormgeving
+%% Structuur en algemene vormgeving. Meestal hoef je hier niets te wijzigen.
 %%
 %% Auteur: Bert Van Vreckem <bert.vanvreckem@hogent.be>
 %% Licentie: CC-BY https://creativecommons.org/licenses/by/4.0/
@@ -57,8 +57,13 @@
 % Computer Modern
 \renewcommand{\familydefault}{\sfdefault}
 
+%%---------- Broncode (Java) --------------------------------------------------
 % Commando voor invoegen Java-broncodebestanden (dank aan Niels Corneille)
-% Gebruik: \codefragment{source/MijnKlasse.java}{Uitleg bij de code}
+% Gebruik:
+%   \codefragment{source/MijnKlasse.java}{Uitleg bij de code}
+%
+% Je kan dit aanpassen aan de taal die je zelf het meeste gebruikt in je
+% bachelorproef.
 \newcommand{\codefragment}[2]{ \lstset{%
   language=java,
   breaklines=true,
