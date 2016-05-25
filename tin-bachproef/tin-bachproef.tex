@@ -1,17 +1,17 @@
-%%========================================================================
+%%=============================================================================
 %% LaTeX sjabloon voor bachelorproef, HoGent Bedrijf en Organisatie
 %% Opleiding Toegepaste Informatica
-%%========================================================================
+%%=============================================================================
 
 \documentclass[pdftex,a4paper,12pt,twoside]{report}
 
-% XXX: Let op: dit sjabloon is gemaakt om dubbelzijdig af te drukken
+% TODO: Let op: dit sjabloon is gemaakt om dubbelzijdig af te drukken
 % Voor enkelzijdig, verwijder ``twoside'' hierboven.
 
 \input{structure}
 
 %%---------- Documenteigenschappen ---------------------------------------
-%% Vul dit aan met je eigen info:
+%% TODO: Vul dit aan met je eigen info:
 
 % Je eigen naam
 \newcommand{\student}{Piet Pieters}
@@ -32,38 +32,31 @@
 \newcommand{\titel}{Titel}
 
 % Datum van indienen (gebruik telkens de deadline, ook al geef je eerder af)
-\newcommand{\datum}{29 mei 2015}
+\newcommand{\datum}{27 mei 2016}
 
 % Academiejaar
-\newcommand{\academiejaar}{2014-2015}
+\newcommand{\academiejaar}{2015-2016}
 
 % Examenperiode
 %  - 1e semester = 1e examenperiode => 1
 %  - 2e semester = 2e examenperiode => 2
 %  - tweede zit  = 3e examenperiode => 3
-\newcommand{\examenperiode}{3}
+\newcommand{\examenperiode}{2}
 
-%%========================================================================
+%%=============================================================================
 %% Inhoud document
-%%========================================================================
+%%=============================================================================
 
 \begin{document}
 
 % Als je je bachelorproef in het Engels schrijft, haal dan onderstaande regel
-% uit commentaar. Let op: de tekst op de voorkaft blijft altijd in het
-% Nederlands!
+% uit commentaar. Let op: de tekst op de voorkaft blijft in het Nederlands, en
+% dat is ook de bedoeling!
 \selectlanguage{english}
 
 \inserttitlepage
 
-
-\begin{abstract}
-% TODO: De "abstract" of samenvatting is een kernachtige (max 1 blz. voor een
-% thesis) synthese van het document. In ons geval beschrijf je kort de
-% probleemstelling en de context, de onderzoeksvragen, de aanpak en de
-% resultaten.
-  \lipsum[1-4]
-\end{abstract}
+\input{samenvatting}
 
 \chapter*{Voorwoord}
 \label{ch:voorwoord}
