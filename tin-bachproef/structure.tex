@@ -34,16 +34,14 @@
 \usepackage{lmodern}
 \usepackage{textcomp}
 
+\usepackage{etoolbox}
 \usepackage{lipsum}          % Voor vultekst (lorem ipsum)
 
 %%---------- Layout -----------------------------------------------------------
 
-\pagestyle{fancy}            % Hoofdingen invoegen
-\renewcommand{\sectionmark}[1]{} % enkel hoofdstuktitel in hoofding, geen
-                             % sectietitel (vermijd overlap)
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-                             % horizontale lijn (voor titelpagina)
+\pagestyle{fancy}                % Hoofdingen invoegen
+\renewcommand{\sectionmark}[1]{} % Enkel hoofdstuktitel in hoofding, geen
+                                 % sectietitel (vermijd overlap)
 
 % Leeg blad
 \newcommand{\emptypage}{
@@ -92,8 +90,7 @@
     Scriptie voorgedragen tot het bekomen van de graad van\\professionele bachelor in de toegepaste informatica\\[2cm]
     Promotor:\\
     \promotor\\
-    Co-promotor:\\
-    \copromotor\\[2.5cm]
+    \ifdefempty{\copromotor}{\vspace{2.5cm}}{Co-promotor:\\\copromotor\\[2.5cm]}
     Instelling: \instelling\\[.5cm]
     Academiejaar: \academiejaar\\[.5cm]
     \ifcase \examenperiode \or Eerste \or Tweede \else Derde \fi examenperiode
@@ -116,8 +113,7 @@
     \IfLanguageName{dutch}{Scriptie voorgedragen tot het bekomen van de graad van\\professionele bachelor in de toegepaste informatica}{Thesis submitted in partial fulfillment of the requirements for the degree of\\professional bachelor of applied computer science}\\[2cm]
     Promotor:\\
     \promotor\\
-    Co-promotor:\\
-    \copromotor\\[2.5cm]
+    \ifdefempty{\copromotor}{\vspace{2.5cm}}{Co-promotor:\\\copromotor\\[2.5cm]}
     \IfLanguageName{dutch}{Instelling}{Institution}: \instelling\\[.5cm]
     \IfLanguageName{dutch}{Academiejaar}{Academic year}: \academiejaar\\[.5cm]
     \IfLanguageName{dutch}{%
