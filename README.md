@@ -1,5 +1,7 @@
 # HoGent LaTeX-sjablonen
 
+**LET OP:** het sjabloon voor de bachelorproef is verbeterd en verhuisd naar een aparte repository: <https://github.com/HoGentTIN/bachproef-latex-sjabloon>
+
 In deze repository vind je enkele sjablonen voor LaTeX documenten die de HoGent huisstijl (proberen te) volgen.
 
 Momenteel zijn er drie beschikbaar:
